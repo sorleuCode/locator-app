@@ -17,7 +17,7 @@ const getCurrentLocation = () => {
 const showLocation = async (position) => {
 
     try {
-        const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${position.coords.latitude}6&lon=${position.coords.longitude}`);
+        const response = await fetch(`https://api.opencagedata.com/geocode/v1/json?key=98433bc618844a1eb558ba08394dbc51&q=${position.coords.latitude}+${position.coords.longitude}&pretty=1&no_annotations=1`);
 
         const data = await response.json();
         console.log(data);
