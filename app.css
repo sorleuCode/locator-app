@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    background-image: radial-gradient(#5bc0be, #0353a4, #5bc0be, #0353a4);
+
+}
+
+.homeContainer {
+    width: 100vw;
+    height: 80vh;
+    margin: 3rem auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    
+
+}
+
+.locationCon {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+    width: 440px;
+    height: 100vh;
+    padding: 1rem;
+    border: 1px solid black;
+    margin: 0 auto;
+    background-color: rgb(112, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 10px 10px 10px rgba(37, 50, 45, 0.2);
+    
+}
+
+.mapMarker {
+    font-size: 3rem;
+}
+
+#currentLocationBtn {
+    margin: 0 auto;
+    /* margin-bottom: 1rem; */
+    padding: 1.1rem 0.9rem;
+    background-color: white;
+    width: 65%;
+    font-size: 1.7rem;
+    border-radius: 10px;
+    color: black;
+    border: none;
+    color: black;
+
+}
+
+#exploreContainer {
+    margin: 0 auto;
+    padding: 0.7rem;
+    background-color: white;
+    width: fit-content;
+    font-size: 1.7rem;
+    border-radius: 10px;
+    color: black;
+    width: 65%;
+
+}
+
+#exploreContainer:hover, #currentLocationBtn:hover {
+    cursor: pointer;
+    background-color: bisque;
+    transform: translate(0px, 5px);
+}
+
+#exploreContainer:active, #currentLocationBtn:active {
+    background-color:burlywood;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#location {
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+}
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    color: aliceblue;
+    letter-spacing: 5px;
+
+    font-size: 3rem;
+    
+}
+
+
+@media screen and (max-width: 1400px){
+    #location {
+        font-size: 1.3rem;
+    }
+
+    #exploreContainer{
+        font-size: 1.5rem;
+    }
+
+    #currentLocationBtn {
+        font-size: 1.6rem;
+    }
+}
+
+
+@media screen and (max-width: 481px){
+    #location {
+        font-size: 1.2rem;
+    }
+
+    #exploreContainer{
+        font-size: 1.1rem;
+        padding: 0.7rem 0.5rem;
+        width: auto;
+    }
+
+    #currentLocationBtn {
+        font-size: 1.1rem;
+        padding: 1rem 0.6rem;
+        width: auto;
+    }
+
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    .locationCon {
+        width: auto;
+        gap: 2.2rem;
+
+    }
+
+    
+}
+
+
+@media screen and (max-width: 393px) {
+    .locationCon{
+        width: 80%;
+    }
+
+    #location {
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+    
+}
+
+@media screen and (max-width: 320px) {
+    h1 {
+        font-size: 1.6rem;
+    }
+}
+@media screen and (max-width: 281px) {
+    h1 {
+        font-size: 1.4rem;
+    }
+}
+@media screen and (max-width: 252px) {
+    h1 {
+        font-size: 1rem;
+    }
+
+    #exploreContainer{
+        font-size: 0.9rem;
+    }
+
+    #currentLocationBtn {
+        font-size: 0.9rem;
+    }
+
+}
+@media screen and (max-width: 219px) {
+    h1 {
+        font-size: 0.8rem;
+    }
+
+    #exploreContainer{
+        font-size: 0.6rem;
+    }
+
+    #currentLocationBtn {
+        font-size: 0.6rem;
+    }
+
+}
