@@ -22,8 +22,7 @@ const showLocation = async (position) => {
         const data = await response.json();
         console.log(data);
 
-        locationResult.innerText = `${data.address.road}, ${data.address.village}, 
-    ${data.address.state}, ${data.address.country}`
+        locationResult.innerText = `${data.results[0].formatted}`;
 
     } catch (error) {
         switch (error.code) {
