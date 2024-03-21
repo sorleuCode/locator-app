@@ -25,7 +25,7 @@ const showLocation = async (position) => {
 
         // locationResult.innerText = `${data.results[0].formatted}`;
 
-        locationResult.innerText = `${data.data[0].label}`;
+        locationResult.innerText = `${data.data[0].name}, ${data.data[0].county}, ${data.data[0].region}, ${data.data[0].country}`;
 
     } catch (error) {
         switch (error.code) {
