@@ -17,13 +17,13 @@ const getCurrentLocation = () => {
 const showLocation = async (position) => {
 
     try {
-        const response = await fetch(`https://api.opencagedata.com/geocode/v1/json?key=98433bc618844a1eb558ba08394dbc51&q=${position.coords.latitude}+${position.coords.longitude}&pretty=1&roadinfo=1&no_annotations=1&address_only=1`);
+        const response = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&Key=bdc_cae158a386e445ffbb8b3a562aae4f47&localityLanguage=en`);
         // const response = await fetch(`https://api.positionstack.com/v1/reverse?access_key=2a27b4745240196a4c034c5d525cfd27&query= ${position.coords.latitude},${position.coords.longitude}&country_module=1`);
 
         const data = await response.json();
         console.log(data);
 
-        locationResult.innerText = `${data.results[0].formatted}`;
+        locationResult.innerText = `${data.locality}, ${data.city}, ${data.countryName}`;
 
         // locationResult.innerText = `${data.data[0].name}, ${data.data[0].county}, ${data.data[0].region}, ${data.data[0].country}`;
 
