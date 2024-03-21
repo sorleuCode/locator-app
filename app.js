@@ -23,7 +23,7 @@ const showLocation = async (position) => {
         const data = await response.json();
         console.log(data);
 
-        locationResult.innerText = `${data.locality}, ${data.city}, ${data.countryName}`;
+        locationResult.innerText = `${data.locality}, ${data.city}, ${data.principalSubdivisiongit}, ${data.countryName}`;
 
         // locationResult.innerText = `${data.data[0].name}, ${data.data[0].county}, ${data.data[0].region}, ${data.data[0].country}`;
 
