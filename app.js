@@ -1,5 +1,6 @@
 const locationResult = document.getElementById("location");
 const currentLocationBtn = document.getElementById("currentLocationBtn");
+const loader = document.querySelector(".loader");
 
 const getCurrentLocation = () => {
     if (navigator.geolocation) {
@@ -18,26 +19,29 @@ const showLocation = async (position) => {
     const apiUrl = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${position.coords.latitude}&longitude=${position.coords.longitude}&Key=bdc_cae158a386e445ffbb8b3a562aae4f47&localityLanguage=en`;
     try {
         const response = await fetch(apiUrl);
+        if (!response.ok) throw Error("Try reloading the app");
 
         const data = await response.json();
-        console.log(data);
 
-        locationResult.innerText = `${data.locality}, ${data.city}, ${data.principalSubdivision} State, ${data.countryName}, ${data.continent}.`;
+        loader.style.display = "block";
+
+        locationResult.style.display = "none";
+        
+        
+
+
+        setTimeout(() => {
+
+            loader.style.display = "none";
+
+            locationResult.style.display = "block";
+            
+            locationResult.innerText = `${data.locality}, ${data.city}, ${data.principalSubdivision} State, ${data.countryName}, ${data.continent}.`;
+        }, 2000);
+
 
     } catch (error) {
-        switch (error.code) {
-            case error.PERMISSION_DENIED:
-                locationResult.innerText = "Please allow access to location";
-                break;
-            case error.POSITION_UNAVAILABLE:
-                locationResult.innerText = "Location info is not available";
-                break;
-            case error.TIMEOUT:
-                locationResult.innerText = "The request to get user location is timed out";
-                break;
-            default:
-                break;
-        }
+        locationResult.innerText = error.message;
     }
 }
 
